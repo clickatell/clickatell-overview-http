@@ -1,38 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Clickatell HTTP API Overview : Introduction to Clickatell's HTTP API" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Clickatell HTTP API Overview by clickatell</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Clickatell HTTP API Overview</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>Clickatell HTTP API Overview</h1>
+        <p>Introduction to Clickatell&#39;s HTTP API</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/arnoesterhuizen/clickatell-overview-http">View on GitHub</a>
+        <p class="view"><a href="https://github.com/clickatell/clickatell-overview-http">View the Project on GitHub <small>clickatell/clickatell-overview-http</small></a></p>
 
-          <h1 id="project_title">Clickatell HTTP API Overview</h1>
-          <h2 id="project_tagline">Introduction to Clickatell's HTTP API</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/arnoesterhuizen/clickatell-overview-http/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/arnoesterhuizen/clickatell-overview-http/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+        <ul>
+          <li><a href="https://github.com/clickatell/clickatell-overview-http/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/clickatell/clickatell-overview-http/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/clickatell/clickatell-overview-http">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h1>
-<a name="clickatell-http-api-overview" class="anchor" href="#clickatell-http-api-overview"><span class="octicon octicon-link"></span></a>Clickatell HTTP API Overview</h1>
+<a id="clickatell-http-api-overview" class="anchor" href="#clickatell-http-api-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clickatell HTTP API Overview</h1>
 
 <p>The full Clickatell HTTP API documentation can be found at <a href="https://www.clickatell.com/downloads/http/Clickatell_HTTP.pdf">https://www.clickatell.com/downloads/http/Clickatell_HTTP.pdf</a>.</p>
 
@@ -41,14 +38,14 @@
 <p>Remember to URL encode your parameter values.</p>
 
 <h1>
-<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h1>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h1>
 
 <p>The call is in the format <code>https://api.clickatell.com/http/&lt;command&gt;?&lt;parameters&gt;</code></p>
 
 <p>See a list of <a href="#commonly-used-commands">commands</a> and <a href="#parameters">parameters</a>.</p>
 
 <h1>
-<a name="commonly-used-commands" class="anchor" href="#commonly-used-commands"><span class="octicon octicon-link"></span></a>Commonly Used Commands</h1>
+<a id="commonly-used-commands" class="anchor" href="#commonly-used-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Commonly Used Commands</h1>
 
 <p>The most frequently used commands are:</p>
 
@@ -59,7 +56,9 @@
 <a href="#sendmsg"><code>sendmsg</code></a> – Send a message</li>
 <li>
 <a href="#token_pay"><code>token_pay</code></a> – Redeem a voucher for credits</li>
-</ul><p>Other commonly used commands include:</p>
+</ul>
+
+<p>Other commonly used commands include:</p>
 
 <ul>
 <li>
@@ -72,10 +71,12 @@
 <a href="#delmsg"><code>delmsg</code></a> – Delete a message if it hasn't left our system</li>
 <li>
 <a href="#getbalance"><code>getbalance</code></a> – Get the balance of the specified account</li>
-</ul><p>Below is an alpahbetical listing of the more commonly used commands with a description. To see the full list of commands, refer to <a href="https://www.clickatell.com/downloads/http/Clickatell_HTTP.pdf">Clickatell's HTTP API documentation</a>.</p>
+</ul>
+
+<p>Below is an alpahbetical listing of the more commonly used commands with a description. To see the full list of commands, refer to <a href="https://www.clickatell.com/downloads/http/Clickatell_HTTP.pdf">Clickatell's HTTP API documentation</a>.</p>
 
 <h2>
-<a name="auth" class="anchor" href="#auth"><span class="octicon octicon-link"></span></a><code>auth</code>
+<a id="auth" class="anchor" href="#auth" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>auth</code>
 </h2>
 
 <p>Authenticate and get a <a href="#session_id"><code>session_id</code></a> that expires after 15 minutes of inactivity.</p>
@@ -101,10 +102,12 @@
 <li><code>ERR: &lt;error code&gt;, &lt;error description&gt;</code></li>
 </ul>
 </li>
-</ul><p>The <a href="#session_id"><code>session_id</code></a> is a 32 character hexadecimal string. See a list of <a href="#error-codes">error codes and descriptions</a>.</p>
+</ul>
+
+<p>The <a href="#session_id"><code>session_id</code></a> is a 32 character hexadecimal string. See a list of <a href="#error-codes">error codes and descriptions</a>.</p>
 
 <h2>
-<a name="delmsg" class="anchor" href="#delmsg"><span class="octicon octicon-link"></span></a><code>delmsg</code>
+<a id="delmsg" class="anchor" href="#delmsg" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>delmsg</code>
 </h2>
 
 <p>Prevent a message that hasn't left Clickatell's message queues from being sent. Because Clicaktell processes messages immediately, this command is only useful for messages with a <a href="#deliv_time">deferred delivery time</a> or a <a href="#scheduled_time">scheduled delivery time in the future</a>.</p>
@@ -129,10 +132,12 @@
 <li><code>ERR: &lt;error code&gt;, &lt;error description&gt;</code></li>
 </ul>
 </li>
-</ul><p>See a list of <a href="#status">status codes</a> and <a href="#error-codes">error codes and descriptions</a>.</p>
+</ul>
+
+<p>See a list of <a href="#status">status codes</a> and <a href="#error-codes">error codes and descriptions</a>.</p>
 
 <h2>
-<a name="getbalance" class="anchor" href="#getbalance"><span class="octicon octicon-link"></span></a><code>getbalance</code>
+<a id="getbalance" class="anchor" href="#getbalance" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>getbalance</code>
 </h2>
 
 <p>This will return the number of credits available to the account (as a floating point value).</p>
@@ -156,10 +161,12 @@
 <li><code>ERR: &lt;error code&gt;, &lt;error description&gt;</code></li>
 </ul>
 </li>
-</ul><p>See a list of <a href="#error-codes">error codes and descriptions</a>.</p>
+</ul>
+
+<p>See a list of <a href="#error-codes">error codes and descriptions</a>.</p>
 
 <h2>
-<a name="getmsgcharge" class="anchor" href="#getmsgcharge"><span class="octicon octicon-link"></span></a><code>getmsgcharge</code>
+<a id="getmsgcharge" class="anchor" href="#getmsgcharge" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>getmsgcharge</code>
 </h2>
 
 <p>This is a fallback method to query how many credits were used to send a message. The preferred way to get this information is to use the <a href="#callback"><code>callback</code></a> parameter. This method also returns the message status.</p>
@@ -184,10 +191,12 @@
 <li><code>ERR: &lt;error code&gt;, &lt;error description&gt;</code></li>
 </ul>
 </li>
-</ul><p>See a list of <a href="#status">status codes</a> and <a href="#error-codes">error codes and descriptions</a>. See also <a href="#querymsg"><code>querymsg</code></a>.</p>
+</ul>
+
+<p>See a list of <a href="#status">status codes</a> and <a href="#error-codes">error codes and descriptions</a>. See also <a href="#querymsg"><code>querymsg</code></a>.</p>
 
 <h2>
-<a name="querymsg" class="anchor" href="#querymsg"><span class="octicon octicon-link"></span></a><code>querymsg</code>
+<a id="querymsg" class="anchor" href="#querymsg" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>querymsg</code>
 </h2>
 
 <p>This is a fallback method to query the status of a message. The preferred way to get this information is to use the <a href="#callback"><code>callback</code></a> parameter.</p>
@@ -212,10 +221,12 @@
 <li><code>ERR: &lt;error code&gt;, &lt;error description&gt;</code></li>
 </ul>
 </li>
-</ul><p>See a list of <a href="#status">status codes</a> and <a href="#error-codes">error codes and descriptions</a>. See also <a href="#getmsgcharge"><code>getmsgcharge</code></a>.</p>
+</ul>
+
+<p>See a list of <a href="#status">status codes</a> and <a href="#error-codes">error codes and descriptions</a>. See also <a href="#getmsgcharge"><code>getmsgcharge</code></a>.</p>
 
 <h2>
-<a name="ping" class="anchor" href="#ping"><span class="octicon octicon-link"></span></a><code>ping</code>
+<a id="ping" class="anchor" href="#ping" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>ping</code>
 </h2>
 
 <p>Ping the service to extend your session lifetime with another 15 minutes.</p>
@@ -239,10 +250,12 @@
 <li><code>ERR: &lt;error code&gt;, &lt;error description&gt;</code></li>
 </ul>
 </li>
-</ul><p>See a list of <a href="#error-codes">error codes and descriptions</a>.</p>
+</ul>
+
+<p>See a list of <a href="#error-codes">error codes and descriptions</a>.</p>
 
 <h2>
-<a name="sendmsg" class="anchor" href="#sendmsg"><span class="octicon octicon-link"></span></a><code>sendmsg</code>
+<a id="sendmsg" class="anchor" href="#sendmsg" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>sendmsg</code>
 </h2>
 
 <p>Send a message to a recipient.</p>
@@ -268,7 +281,9 @@
 <li><code>ERR: &lt;error code&gt;, &lt;error description&gt;</code></li>
 </ul>
 </li>
-</ul><p>You can also send a message to multiple recipients by passing a comma-seperated list of destination numbers.</p>
+</ul>
+
+<p>You can also send a message to multiple recipients by passing a comma-seperated list of destination numbers.</p>
 
 <ul>
 <li>Success response; multiple recipients:
@@ -290,10 +305,12 @@
 <li><code>ERR: &lt;error code&gt;, &lt;error description&gt; To: &lt;recipient&gt;</code></li>
 </ul>
 </li>
-</ul><p>See a list of <a href="#error-codes">error codes and descriptions</a>.</p>
+</ul>
+
+<p>See a list of <a href="#error-codes">error codes and descriptions</a>.</p>
 
 <h2>
-<a name="token_pay" class="anchor" href="#token_pay"><span class="octicon octicon-link"></span></a><code>token_pay</code>
+<a id="token_pay" class="anchor" href="#token_pay" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>token_pay</code>
 </h2>
 
 <p>Use this command to redeem a voucher for message credits.</p>
@@ -318,27 +335,29 @@
 <li><code>ERR: &lt;error code&gt;, &lt;error description&gt;</code></li>
 </ul>
 </li>
-</ul><p>See a list of <a href="#error-codes">error codes and descriptions</a>.</p>
+</ul>
+
+<p>See a list of <a href="#error-codes">error codes and descriptions</a>.</p>
 
 <h1>
-<a name="parameters" class="anchor" href="#parameters"><span class="octicon octicon-link"></span></a>Parameters</h1>
+<a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h1>
 
 <p>These (and more) parameters are documented in more detail in <a href="https://www.clickatell.com/downloads/http/Clickatell_HTTP.pdf">Clickatell's HTTP API documentation</a>.</p>
 
 <h2>
-<a name="api_id" class="anchor" href="#api_id"><span class="octicon octicon-link"></span></a><code>api_id</code>
+<a id="api_id" class="anchor" href="#api_id" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>api_id</code>
 </h2>
 
 <p>You can sign up for multiple APIs in your Clickatell Developers' Central account, and you specify which one you would like to use using the <code>api_id</code>.</p>
 
 <h2>
-<a name="apimsgid" class="anchor" href="#apimsgid"><span class="octicon octicon-link"></span></a><code>apimsgid</code>
+<a id="apimsgid" class="anchor" href="#apimsgid" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>apimsgid</code>
 </h2>
 
 <p>A unique ID we return that can be used to refer to a message submitted to our servers. The <code>apimsgid</code> is a 32 character hexadecimal string.</p>
 
 <h2>
-<a name="callback" class="anchor" href="#callback"><span class="octicon octicon-link"></span></a><code>callback</code>
+<a id="callback" class="anchor" href="#callback" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>callback</code>
 </h2>
 
 <p>Specify which message statuses to inform you of. You need to set a callback URL in the API settings in Clickatell Developer's Central.</p>
@@ -348,11 +367,13 @@
 <p>Possible values for the <code>callback</code> parameter are:</p>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Callback Value</th>
 <th>Status Codes that will trigger a callback (See <a href="#status"><code>status</code></a>)</th>
 <th>Detail</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>0</td>
@@ -395,7 +416,9 @@
 <td>Intermediate, final and error statuses</td>
 </tr>
 </tbody>
-</table><p>Currently all error statuses are also final statuses, but in the future we may return error statuses that are not final.</p>
+</table>
+
+<p>Currently all error statuses are also final statuses, but in the future we may return error statuses that are not final.</p>
 
 <p>The retry cycle:</p>
 
@@ -408,32 +431,34 @@
 <li>64 minutes after previous attempt</li>
 <li>128 minutes after previous attempt</li>
 <li>3 days after previous attempt</li>
-</ol><h2>
-<a name="charge" class="anchor" href="#charge"><span class="octicon octicon-link"></span></a><code>charge</code>
+</ol>
+
+<h2>
+<a id="charge" class="anchor" href="#charge" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>charge</code>
 </h2>
 
 <p>The amount of credits that was used to deliver the message.</p>
 
 <h2>
-<a name="climsgid" class="anchor" href="#climsgid"><span class="octicon octicon-link"></span></a><code>climsgid</code>
+<a id="climsgid" class="anchor" href="#climsgid" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>climsgid</code>
 </h2>
 
 <p>An optional unique ID you can use when sending a message. We will then return in addition to the <a href="#apimsgid"><code>apimsgid</code></a>. Use alphanumeric characters of maximum of 32 characters in length.</p>
 
 <h2>
-<a name="concat" class="anchor" href="#concat"><span class="octicon octicon-link"></span></a><code>concat</code>
+<a id="concat" class="anchor" href="#concat" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>concat</code>
 </h2>
 
 <p>Messages that are longer than 160 charaters (or 140 bytes) can be sent in multiple parts and concatenated by the receiving handset. This parameter allows you to specify the maximum number of parts to split the message into (up to a maximum of 3).</p>
 
 <h2>
-<a name="deliv_time" class="anchor" href="#deliv_time"><span class="octicon octicon-link"></span></a><code>deliv_time</code>
+<a id="deliv_time" class="anchor" href="#deliv_time" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>deliv_time</code>
 </h2>
 
 <p>The number of minutes to delay the message delivery. The maximum is 10080 minutes (or 7 days). Please note that the message can be sent out up to 5 minutes later than specified.</p>
 
 <h2>
-<a name="from" class="anchor" href="#from"><span class="octicon octicon-link"></span></a><code>from</code>
+<a id="from" class="anchor" href="#from" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>from</code>
 </h2>
 
 <p>The source address (also known as a sender ID) to display on the recipient's handset. This is mostly used when you need recipients to be able to reply to your message, and must first be configured in your Clickatell Developers' Central account. Setting the <code>from</code> parameter isn't guaranteed to work with all mobile networks or handsets. Refer to the <a href="#mo"><code>mo</code></a> parameter for more information.</p>
@@ -441,41 +466,43 @@
 <p>Similar to the <a href="#to"><code>to</code></a> parameter, this needs to be in standard international format (e.g. including the coutry code, and using only digits – without any spaces or "+").</p>
 
 <h2>
-<a name="mo" class="anchor" href="#mo"><span class="octicon octicon-link"></span></a><code>mo</code>
+<a id="mo" class="anchor" href="#mo" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>mo</code>
 </h2>
 
 <p>To make sure that the <a href="#from"><code>from</code></a> parameter works as expected, set this parameter to 1 and we will only use mobile networks that allow a source address to be specified. This is only applicable if you you need recipients to be able to reply to your messages, and might mean we have to use more expensive delivery methods.</p>
 
 <h2>
-<a name="password" class="anchor" href="#password"><span class="octicon octicon-link"></span></a><code>password</code>
+<a id="password" class="anchor" href="#password" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>password</code>
 </h2>
 
 <p>This is the password you used when signing up for your Clickatell Developers' Central account.</p>
 
 <h2>
-<a name="scheduled_time" class="anchor" href="#scheduled_time"><span class="octicon octicon-link"></span></a><code>scheduled_time</code>
+<a id="scheduled_time" class="anchor" href="#scheduled_time" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>scheduled_time</code>
 </h2>
 
 <p>The unix timestamp of when we should deliver the message. You can schedule up to 7 days in advance. Please note that the message can be sent out up to 5 minutes later than specified.</p>
 
 <h2>
-<a name="session_id" class="anchor" href="#session_id"><span class="octicon octicon-link"></span></a><code>session_id</code>
+<a id="session_id" class="anchor" href="#session_id" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>session_id</code>
 </h2>
 
 <p>The unique session ID we send after you authenticate. This is valid for 15 minutes after the last API call, but you can keep the session alive by using the <a href="#ping"><code>ping</code></a> command.</p>
 
 <h2>
-<a name="status" class="anchor" href="#status"><span class="octicon octicon-link"></span></a><code>status</code>
+<a id="status" class="anchor" href="#status" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>status</code>
 </h2>
 
 <p>As messages get processed, we update the message status. Message statuses are:</p>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Status Code</th>
 <th>Status Description</th>
 <th>Comment</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>001</td>
@@ -543,8 +570,10 @@
 <td>The allowable amount for MT messaging has been exceeded.</td>
 </tr>
 </tbody>
-</table><h2>
-<a name="text" class="anchor" href="#text"><span class="octicon octicon-link"></span></a><code>text</code>
+</table>
+
+<h2>
+<a id="text" class="anchor" href="#text" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>text</code>
 </h2>
 
 <p>The body of the message you would like to send. If the text is more than 160 characters, use the <a href="#concat"><code>concat</code></a> parameter to make them concatenate on supported handsets. </p>
@@ -552,44 +581,46 @@
 <p>For messages with special characters you will need to encode it using <a href="http://rishida.net/tools/conversion/">http://rishida.net/tools/conversion/</a>, and set the <a href="#unicode"><code>unicode</code></a> parameter to 1.</p>
 
 <h2>
-<a name="timestamp" class="anchor" href="#timestamp"><span class="octicon octicon-link"></span></a><code>timestamp</code>
+<a id="timestamp" class="anchor" href="#timestamp" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>timestamp</code>
 </h2>
 
 <p>The unix timestamp we return with every message status update to indicate when the status change was triggered.</p>
 
 <h2>
-<a name="to" class="anchor" href="#to"><span class="octicon octicon-link"></span></a><code>to</code>
+<a id="to" class="anchor" href="#to" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>to</code>
 </h2>
 
 <p>The recipient address in standard international format (e.g. including the coutry code, and using only digits – without any spaces or "+")</p>
 
 <h2>
-<a name="token" class="anchor" href="#token"><span class="octicon octicon-link"></span></a><code>token</code>
+<a id="token" class="anchor" href="#token" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>token</code>
 </h2>
 
 <p>The credit voucher token you would like to redeem. this will add credits to your account.</p>
 
 <h2>
-<a name="unicode" class="anchor" href="#unicode"><span class="octicon octicon-link"></span></a><code>unicode</code>
+<a id="unicode" class="anchor" href="#unicode" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>unicode</code>
 </h2>
 
 <p>Specify this parameter with a value of 1 if you have special characters in your message. See the description of the <a href="#text"><code>text</code></a> parameter.</p>
 
 <h2>
-<a name="user" class="anchor" href="#user"><span class="octicon octicon-link"></span></a><code>user</code>
+<a id="user" class="anchor" href="#user" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>user</code>
 </h2>
 
 <p>This is the username you used when signing up for your Clickatell Developers' Central account.</p>
 
 <h1>
-<a name="error-codes" class="anchor" href="#error-codes"><span class="octicon octicon-link"></span></a>Error Codes</h1>
+<a id="error-codes" class="anchor" href="#error-codes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Error Codes</h1>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Error Code</th>
 <th>Error Description</th>
 <th>Comment</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>001</td>
@@ -734,17 +765,12 @@
 </tbody>
 </table>
       </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Clickatell HTTP API Overview maintained by <a href="https://github.com/arnoesterhuizen">arnoesterhuizen</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/clickatell">clickatell</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-
   </body>
 </html>
